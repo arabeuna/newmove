@@ -9,4 +9,4 @@ Aplicativo de transporte estilo Uber desenvolvido com MERN Stack (MongoDB, Expre
 - Autenticação: JWT
 - Maps: Google Maps API
 
-## Estrutura do Projeto
+## Estrutura do Projeto.
