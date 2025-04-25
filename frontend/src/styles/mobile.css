@@ -1,0 +1,54 @@
+/* Estilos específicos para mobile */
+@media screen and (max-width: 768px) {
+  /* Ajustes para o mapa */
+  .map-container {
+    height: calc(100vh - 56px); /* Altura total menos a navbar */
+  }
+
+  /* Ajustes para botões e interações */
+  button, 
+  .btn {
+    min-height: 44px; /* Tamanho mínimo para touch targets */
+    touch-action: manipulation;
+  }
+
+  /* Ajustes para inputs */
+  input,
+  select {
+    font-size: 16px; /* Evita zoom automático no iOS */
+  }
+
+  /* Ajustes para modais */
+  .modal-content {
+    margin: 0;
+    border-radius: 20px 20px 0 0;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+  }
+
+  /* Melhorar feedback tátil */
+  .btn:active {
+    transform: scale(0.98);
+  }
+  
+  /* Prevenir comportamentos indesejados do navegador */
+  * {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  
+  /* Melhorar scrolling */
+  .scroll-container {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+  }
+  
+  /* Ajustar inputs para mobile */
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+} 

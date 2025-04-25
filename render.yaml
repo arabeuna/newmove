@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: movetop10
+    env: node
+    buildCommand: |
+      cd frontend && npm install --legacy-peer-deps && REACT_APP_API_URL=https://movetop10.onrender.com npm run build && cd ..
+      mkdir -p frontend/build/images
+      cp -r frontend/public/* frontend/build/
+      cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: REACT_APP_GOOGLE_MAPS_API_KEY
+        sync: false
+      - key: FRONTEND_URL
+        value: https://movetop10.onrender.com
+      - key: CORS_ORIGIN
+        value: https://movetop10.onrender.com
+      - key: REACT_APP_API_URL
+        value: https://movetop10.onrender.com
+    healthCheckPath: /api/health
+    autoDeploy: true
+    disk:
+      name: movetop10-data
+      mountPath: /data
+      sizeGB: 1
+    plan: free 
