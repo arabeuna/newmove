@@ -1,21 +1,16 @@
 {
-  "name": "leva-app",
+  "name": "newmove",
   "version": "1.0.0",
-  "description": "Aplicativo de transporte estilo Uber",
-  "main": "backend/server.js",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
   "scripts": {
-    "start": "node backend/src/app.js",
-    "build": "cd frontend && npm install --legacy-peer-deps && npm run build && cd ../backend && npm install",
-    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
-    "install-deps": "npm install && cd frontend && npm install && cd ../backend && npm install",
-    "setup": "cd backend && node scripts/setupDatabase.js",
-    "migrate": "cd backend && node scripts/migrateBoraMoveDb.js"
-  },
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "dependencies": {
-    "concurrently": "^8.2.2",
-    "dotenv": "^16.5.0"
+    "start": "cd backend && npm start",
+    "build": "cd backend && npm install",
+    "dev": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "frontend:build": "cd frontend && npm run build"
   }
 }
