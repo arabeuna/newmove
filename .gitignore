@@ -23,4 +23,20 @@ yarn-error.log*
 .idea/
 
 # OS
-.DS_Store 
+.DS_Store
+
+# Diretórios específicos do projeto
+/movetop10/
+/OneDrive/
+
+# Arquivos temporários
+*.tmp
+*.temp
+
+# Arquivos de backup
+*.bak
+*~
+
+# Arquivos de configuração local
+config.local.js
+settings.local.json 
